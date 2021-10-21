@@ -2,7 +2,7 @@ NAME = ft_ping
 INCLUDES = ./includes
 SRC_PATH = ./sources
 OBJ_PATH = $(SRC_PATH)/debug
-SRC_NAMES = main.c
+SRC_NAMES = main.c nslookup.c error.c parser.c utils.c debug.c
 OBJ_NAMES = $(SRC_NAMES:.c=.o)
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAMES))
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAMES))
@@ -10,7 +10,7 @@ LUTILS_PATH = ./libft
 LUFLAGS = -L$(LUTILS_PATH) -lft
 IFLAGS = -I$(INCLUDES)
 CFLAGS = -Wall -Wextra -Werror
-CC = gcc
+CC = clang
 
 all: $(NAME)
 
