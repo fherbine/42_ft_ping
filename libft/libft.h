@@ -22,6 +22,7 @@
 # include <stdarg.h>
 # include <dirent.h>
 # include "libsh/libsh.h"
+# include "unix_parser/unix_parsing.h"
 # include "defines/ansi.h"
 # include "defines/references.h"
 
@@ -220,5 +221,9 @@ char					**ft_add_tab_elem(char **tab, char *elem);
 char					*ft_getenv(char **envp, char *search);
 
 void					ft_capitalize(char **p_str);
+
+uint8_t					ft_strinarray(char **haystack, char *needle);
+
+double					ft_sqrt(double nb);
 
 #endif

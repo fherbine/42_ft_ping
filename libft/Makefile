@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 LIBSH = libsh/
+UNIX_PARSING = unix_parser/
 OBJ_PATH = ./debug
 SRCS = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 	   ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
@@ -29,7 +30,10 @@ SRCS = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 	   ft_itoa_base.c ft_prints.c ft_specifier_prints.c ft_put_n_char.c \
 	   ft_append_slash.c ft_is_in_dir.c ft_tab_len.c ft_free_tab.c \
 	   ft_tab_del_elem.c ft_copy_tab.c ft_add_tab_elem.c ft_capitalize.c \
-	   $(LIBSH)/ft_getenv.c
+	   ft_strinarray.c ft_sqrt.c \
+	   $(LIBSH)/ft_getenv.c $(UNIX_PARSING)/is_optionstr.c \
+	   $(UNIX_PARSING)/get_option.c $(UNIX_PARSING)/new_option.c \
+	   $(UNIX_PARSING)/del_option.c
 NAME = libft.a
 INCLUDES = ./
 CFLAGS = -Wall -Wextra -Werror
@@ -43,14 +47,15 @@ all: $(NAME)
 $(OBJ_PATH):
 	@mkdir $@
 	@mkdir $@/$(LIBSH)
+	@mkdir $@/$(UNIX_PARSING)
 
 $(NAME): $(OBJ_PATH) $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "]\033[0m --> \033[1;32;40m[Done]\033[0m"
+	@echo "✅ Source files: 81 / 81\033[0m --> \033[1;32m[Done]\033[0m"
 
 $(OBJ_PATH)/%.o: %.c
-	@echo "=\c"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $? -o $@
+	@echo "🔧 Source files: $(shell ls -1 $(OBJ_PATH) | wc -l) / 81\r\c"
 
 clean:
 	@rm -rf $(OBJ_PATH)
