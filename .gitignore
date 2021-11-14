@@ -7,3 +7,6 @@ ft_ping
 
 # config
 .vscode
+
+# libs
+*.a
