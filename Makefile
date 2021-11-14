@@ -17,7 +17,7 @@ all: $(NAME)
 
 welcome:
 	@clear
-	@figlet ft_ping | lolcat
+	@figlet ft_ping | lolcat 2>/dev/null
 	@echo "\n"
 
 $(OBJ_PATH):
