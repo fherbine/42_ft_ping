@@ -112,8 +112,7 @@ typedef struct	s_ping
 	t_rtt			*rtts;
 	t_ping_summary	summary;
 	char			request_buffer[PACKET_SIZE];
-	t_msghdr		*reply_buffer;
-	char			ctrlbuffer[CTRL_BUFFER_SIZE];
+	int				sockfd;
 }				t_ping;
 
 extern t_ping	*g_ping;
@@ -147,7 +146,7 @@ char 				*ip2str(t_sockaddr *addr);
 t_time				timeval_to_ts(struct timeval dt);
 void				ft_sleep(double sec);
 
-void 				ft_ping(t_ping *ping);
+void 				ft_ping(void);
 
 void 				free_rtt(t_rtt *rtt);
 t_rtt				*new_rtt(struct timeval sent, t_rtt *next);
