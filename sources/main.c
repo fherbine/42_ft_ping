@@ -26,6 +26,6 @@ int	main(int argc, char **argv)
 	g_ping = get_ping_struct();
 	parse(argc, argv, g_ping);
 	dnslookup(g_ping->name_or_service, g_ping);
-	ft_ping(g_ping);
+	ft_ping();
 	return (0);
 }

@@ -58,11 +58,6 @@ void		init_ping_struct(t_ping *ping)
 	ping->addrinfo = NULL;
 	ping->rtts = NULL;
 
-	if (!(ping->reply_buffer = (t_msghdr *)malloc(CTRL_BUFFER_SIZE + PACKET_SIZE + sizeof(struct iphdr))))
-		exit(EXIT_FAILURE);
-
-	ping->reply_buffer->msg_iov = NULL;
-
 	ping->summary.min = 0.0;
 	ping->summary.max = 0.0;
 	ping->summary.avg = 0.0;

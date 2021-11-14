@@ -19,11 +19,8 @@ static void		display_option(char *letter, char *description, char *placeholder)
 
 void		proper_exit(int status)
 {
-	if (!g_ping->reply_buffer->msg_iov)
-		free(g_ping->reply_buffer->msg_iov);
 	if (g_ping->addrinfo)
 		freeaddrinfo(g_ping->addrinfo);
-	free(g_ping->reply_buffer);
 	free_rtt(g_ping->rtts);
 	free(g_ping);
 	exit(status);
