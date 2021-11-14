@@ -12,12 +12,6 @@
 
 #include "../includes/ft_ping.h"
 
-//strerror
-#include <string.h>
-#include <errno.h>
-
-
-
 int prepare_request(t_ping *ping, uint8_t af)
 {
 	static int seq = 0;

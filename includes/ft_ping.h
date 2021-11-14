@@ -33,6 +33,9 @@
 #include <netinet/icmp6.h>
 #include <netinet/ip6.h>
 
+#include <string.h>
+#include <errno.h>
+
 
 typedef struct addrinfo t_addrinfo;
 typedef struct sockaddr t_sockaddr;
@@ -40,11 +43,11 @@ typedef struct sockaddr_in t_sockaddr_in;
 typedef struct sockaddr_in6 t_sockaddr_in6;
 typedef struct msghdr t_msghdr;
 
-
+/* ft_ping options */
 #define PING_OPT_HELP 0x01
 #define PING_OPT_DEBUG 0x02
-#define PING_OPT_INET4 0x04
-#define PING_OPT_INET6 0x08
+#define PING_OPT_INET4 0x04 // not used
+#define PING_OPT_INET6 0x08 // not used
 #define PING_OPT_QUIET 0x10
 #define PING_OPT_CUSTOM_TTL 0x20
 #define PING_OPT_SHOW_TIMESTAMPS 0x40
