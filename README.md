@@ -1,7 +1,7 @@
 ft_ping
 =======
 
-Basically a reproduction of the `ping` command, developped in C language.
+Basically a reproduction of the `ping` command, developped in C language. Final grade **125/100**.
 
 ## How to compile 
 
