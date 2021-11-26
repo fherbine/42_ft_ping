@@ -12,7 +12,7 @@ then run:
 $ make
 ```
 
-# How to run
+## How to run
 
 As the regular `ping (8)` command, you can start with:
 ```sh
